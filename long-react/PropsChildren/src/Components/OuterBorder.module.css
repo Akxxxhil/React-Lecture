@@ -1,0 +1,7 @@
+.outerBorder{
+border: 2px solid blue;
+margin: 15px;
+width: 50%;
+border-radius: 4px;
+padding: 10px;
+}
