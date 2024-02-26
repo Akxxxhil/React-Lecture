@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+</body>
+
+
+<!-- let root=document.getElementById('root')
+    let heading=document.createElement('h1')
+    heading.innerHTML="Hello EveryOne !!"
+    root.appendChild(heading)   -->
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script>
+    let root = document.getElementById('root')
+    let heading = React.createElement('h1',{},"Hello EveryOne !!")
+    let heading2 = React.createElement('h2',{},"Hello All !!")
+    let div=React.createElement('div',{},[heading,heading2])
+    let Main_content=ReactDOM.createRoot(root)
+    Main_content.render(div)
+</script>
+
+
+</html>
