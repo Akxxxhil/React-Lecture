@@ -1,0 +1,10 @@
+.outerdiv{
+    border: 2px solid green;
+    width: 400px;
+    height: 100px;
+    margin: 30px;
+    padding: 30px;
+}
+.buttono{
+float: right;
+}
