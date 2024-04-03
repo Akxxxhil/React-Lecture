@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Cards from './Components/Cards';
+import Heading from './Components/Heading';
+import './App.css';
+
+const restaurants = [
+  { name: "Nandan Hotel", bestFood: "edli", id: 1 },
+  { name: "MayFair Restro", bestFood: "puri", id: 2 },
+  { name: "Cafe sun Downer", bestFood: "sweets", id: 3 },
+  { name: "PathSala Resturant", bestFood: "ice-cream", id: 4 }
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [restro, setRestro] = useState(restaurants);
+  
+  const filterRestaurants = (searchInput) => {
+    const filteredRestaurants = restaurants.filter(restaurant => 
+      restaurant.name.toLowerCase().includes(searchInput.toLowerCase())
+    );
+    setRestro(filteredRestaurants);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Heading filterRestaurants={filterRestaurants} />
+      <div className="heading">
+        {restro.map((restaurant) => (
+          <Cards name={restaurant.name} bestFood={restaurant.bestFood} key={restaurant.id} />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

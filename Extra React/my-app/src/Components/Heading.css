@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+}
+.searchbar{
+    font-size: 31px;
+    position: relative;
+    top: 46px;
+    left: 30px;
+}
+.saerchButton{
+    border: 2px solid red;
+}
+.searchButton{
+    position: relative;
+    top: -78px;
+    left: 728px;
+}
