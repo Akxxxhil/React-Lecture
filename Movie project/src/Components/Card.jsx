@@ -2,10 +2,19 @@ import { useState } from "react";
 
 import "./Card.css";
 
-function Card({ id,MovieName,MovieYear,image,deleteRemover }) {
+function Card({ id,MovieName,MovieYear,image,deleteRemover,description }) {
   const [text, setText] = useState(false);
+  const [info,setInfo]=useState(`${description.substr(0,20)}...showMore`)
   
- 
+  function infohandler(){
+    if(info.endsWith("...showMore")){
+      setInfo(`${description}...ReadLess`)
+    }
+    else{
+      setInfo(`${description.substr(0,20)}...showMore`)
+    }  
+  }
+
   function clickHandler() {
     setText(!text);
   }
@@ -20,6 +29,11 @@ function Card({ id,MovieName,MovieYear,image,deleteRemover }) {
           </div>
           <div className="year">
             <h3>{MovieYear}</h3>
+          </div>
+          <div className="movie-about">
+            <h3 onClick={infohandler}>
+              {info}
+            </h3>
           </div>
         </div>
 
