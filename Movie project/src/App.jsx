@@ -3,6 +3,14 @@ import "./App.css";
 import Cards from "./Components/Cards";
 import Navbar from "./Components/Navbar";
 import Data from "./Data";
+import {Routes,Route} from "react-router-dom"
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
+import DashBoard from "./Pages/DashBoard";
+import Home from "./Pages/Home"
+import About from "./Pages/About"
+import Career from "./Pages/Career"
+import Contact from "./Pages/Contact"
 
 function App() {
   const [movies, setMovies] = useState(Data);
@@ -14,7 +22,21 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <Cards movies={movies} deleteRemover={deleteRemover}></Cards>
+
+      <Routes>
+        <Route path="/Login" element={<Login/>}/>
+        <Route path="/SignUp" element={<SignUp/>}/>
+        <Route path="/DashBoard" element={<DashBoard/>}/>
+        <Route path="/Home" element={<Home/>}/>
+        <Route path="/About" element={<About/>}/>
+        <Route path="/Career" element={<Career/>}/>
+        <Route path="/Contact" element={<Contact/>}/>
+        <Route path="/MovieTube" element={<div>
+          <Cards movies={movies} deleteRemover={deleteRemover}></Cards>
+        </div>}/>
+        
+      </Routes>
+      
     </>
   );
 }

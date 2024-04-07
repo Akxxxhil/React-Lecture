@@ -1,13 +1,23 @@
+import { NavLink } from "react-router-dom";
+
 function Navbar() {
   return (
     <>
       <div className="outerNav">
-        <h1>MovieTube</h1>
+        <NavLink to="/MovieTube">MovieTube</NavLink>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Career</li>
-          <li>Contact us</li>
+          <li>
+            <NavLink to="/Home">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/About">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Career">Career</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Contact">Contact us</NavLink>
+          </li>
         </ul>
 
         <div className="btn-navbar">
