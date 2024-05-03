@@ -1,16 +1,12 @@
-import "./Cards.css";
-function Cards({name,bestFood}) {
-  return (
-    <>
+import React from 'react';
 
-       
-       <div className="cards">
-            <p>{name}</p>
-            <p>{bestFood}</p>
-        </div>
-      
-     
-    </>
-  );
+function Cards({eachcard}) {
+  return (
+    <div style={{border: "5px solid green", padding: "20",height:"27vh"}}>
+        <p>{eachcard.name}</p>
+        <p>{eachcard.username}</p>
+    </div>
+  )
 }
+
 export default Cards;
