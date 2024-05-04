@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import Search from "./Search"
+import Loader from './Loader'
 
 function Display() {
     const [carddetails, setCardDetails] = useState([])
+    
     const [searchQuery, setSearchQuery] = useState("")
 
     useEffect(() => {
@@ -20,7 +22,7 @@ function Display() {
         return eachcard.name.toLowerCase().includes(searchQuery.toLowerCase())
     })
 
-    return (
+    return (carddetails.length ===0) ?(<Loader/>): (
         <div>
             <Search setSearchquery={setSearchQuery}></Search>
 
